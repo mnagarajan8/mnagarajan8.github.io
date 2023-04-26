@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My CS7641 Project</title>
+	<title>CS7641 Project</title>
 	<style>
 		.sidebar {
-			width: 200px;
+			width: 100px;
 			position: fixed;
 			top: 0;
 			left: 0;
 			bottom: 0;
-			background-color: #f1f1f1;
+			background-color: #0E2F44;
 		}
 	</style>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -26,18 +26,27 @@
 			});
 		});
 	</script>
+	.tab {
+	  position: relative;
+	  z-index: 1;
+	}
+
+	.main-content {
+	  position: relative;
+	  z-index: 0;
+	}
 </head>
 <body>
 	<div class="sidebar">
 		<ul>
-			<li class="tab active" data-tab="Proposal">Tab 1</li>
-			<li class="tab" data-tab="Midterm Report">Tab 2</li>
-			<li class="tab" data-tab="Final Report">Tab 3</li>
+			<li class="tab active" data-tab="tab1">Proposal</li>
+			<li class="tab" data-tab="tab2">Midterm Report</li>
+			<li class="tab" data-tab="tab3">Final Report</li>
 		</ul>
 	</div>
 
 	<div class="main-content">
-		<div class="tab-content active" id="Proposal">
+		<div class="tab-content active" id="tab1">
 						<h1>CS7641 Project Proposal (Indicators of Heart Disease)</h1>
 				      <h2>Introduction, Background, and Dataset</h2>
 					<p>Heart disease is currently the number 1 cause of death in the United States causing nearly 700,000 deaths per year. It is largely related to the person(s) current health conditions, as a result we will use machine learning models to identify leading factors resulting in patients’ deaths. Our dataset accounts for leading factors like BMI, smoking history, and sex which are currently identified as factors leading to heart disease.</p>
