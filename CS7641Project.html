@@ -1,1 +1,91 @@
-<h1>Hello!<\h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My CS7641 Project</title>
+	<style>
+		.sidebar {
+			width: 200px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			background-color: #f1f1f1;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.tab').click(function() {
+				var tab_id = $(this).attr('data-tab');
+
+				$('.tab').removeClass('active');
+				$('.tab-content').removeClass('active');
+
+				$(this).addClass('active');
+				$('#' + tab_id).addClass('active');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="sidebar">
+		<ul>
+			<li class="tab active" data-tab="Proposal">Tab 1</li>
+			<li class="tab" data-tab="Midterm Report">Tab 2</li>
+			<li class="tab" data-tab="Final Report">Tab 3</li>
+		</ul>
+	</div>
+
+	<div class="main-content">
+		<div class="tab-content active" id="Proposal">
+			<h1>CS7641 Project Proposal (Indicators of Heart Disease)</h1>
+	      <h2>Introduction, Background, and Dataset</h2>
+	        <p>Heart disease is currently the number 1 cause of death in the United States causing nearly 700,000 deaths per year. It is largely related to the person(s) current health conditions, as a result we will use machine learning models to identify leading factors resulting in patients’ deaths. Our dataset accounts for leading factors like BMI, smoking history, and sex which are currently identified as factors leading to heart disease.</p>
+		      <p>The dataset we are using comes from the CDC and is a major part of the Behavioral Risk Factor Surveillance System (BRFSS), which conducts annual telephone surveys to gather data on the health status of U.S. residents.</p>
+          <p>Source of Data: <a href="https://www.cdc.gov/brfss/annual_data/annual_2020.html">click here</a></p>
+          <p>Dataset Link (Kaggle): <a href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease">click here</a></p>
+  
+        <h2>Methods</h2>
+          <li>Preprocessing</li>
+          <ul>
+            <li>We will start by partitioning our dataset such that 90% of our data points will be used as training data and 10% as test data. We will convert all of our features that are binary from ‘yes’ and ‘no’ to 1’s and 0’s respectively, and all categorical data such as age ranges will be processed into integer equivalents (i.e. 50-54 = 0, 55-59 = 1, etc.) From there we will use Principal Component Analysis (PCA) to reduce the dimensionality of features.</li>
+          <li>Unsupervised</li>
+             </ul>
+          <ul>
+            <li>We plan to analyze our data by first using the K-means algorithm. After receiving cluster assignments we will determine the cluster strength of each component through distortion value. We will analyze this metric using the elbow method to receive the optimal cluster count (k). We will then move on to using more complicated algorithms like GMM and DBScan with SMOTE in the case our data is unbalanced.</li>
+             </ul>
+          <li>Supervised</li>
+          <ul>
+            <li>We will first use Decision Tree classifiers and Deep Neural Networks (DNN) to compare test results of predicting heart disease with our other models by tuning various hyperparameters. We will then move on to SVM with XGBoost as this is prominent in some research papers.
+</li>
+            </ul>
+      
+      <h2>Potential Results and Discussion</h2>
+      <li>Unsupervised</li>
+          <ul>
+            <li>We expect the unsupervised models to produce clusters that we may examine to discover commonalities. We anticipate finding clusters of cases of heart disease that are related (e.g., share BMI or Mental Health), as well as other clusters that are less visible and call for more investigation. We want to utilize PCA to reduce the number of dimensions and only take into account the most important features.</li>
+      </ul>
+      <li>Supervised</li>
+          <ul>
+            <li>Our supervised models are expected to be trained to predict whether a patient has heart disease or not based on a set of features such as age and smoking status to identify which features are the most important predictors of heart disease.
+</li>
+      </ul>
+      
+      
+      <h2>Timeline</h2>
+      
+          
+      
+     </div>
+		<div class="tab-content" id="tab2">
+			<h2>Tab 2 Content</h2>
+			<p>This is the content for Tab 2.</p>
+		</div>
+		<div class="tab-content" id="tab3">
+			<h2>Tab 3 Content</h2>
+			<p>This is the content for Tab 3.</p>
+		</div>
+	</div>
+</body>
+</html>
+
